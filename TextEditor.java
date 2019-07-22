@@ -54,7 +54,7 @@ public class TextEditor extends Application {
     @Override
     public void start(Stage primaryStage) {
         window = primaryStage;
-        window.setTitle("NotePad");
+        window.setTitle("Text Editor");
         window.getIcons().add(new Image("file:Icon.png"));
         window.setOnCloseRequest(e -> {
             e.consume();
@@ -151,9 +151,10 @@ public class TextEditor extends Application {
             saveas.saveFile(ta);
         });
 
-        MenuItem page_setup = new MenuItem("Page Setup..."); // remaining
-        MenuItem print = new MenuItem("Print..."); // remaining
+        MenuItem page_setup = new MenuItem("Page Setup..."); // yet to implement
+        MenuItem print = new MenuItem("Print..."); // yet to implement
         MenuItem exit = new MenuItem("Exit");
+        
         exit.setOnAction(e -> {
             if (flag == 0) {
                 SaveDontSave s_d_s = new SaveDontSave(ta, text);
@@ -295,10 +296,10 @@ public class TextEditor extends Application {
      */
     private void addHelpItems() {
         MenuItem view_help = new MenuItem("View Help");
-        MenuItem about_notepad = new MenuItem("About Notepad");
+        MenuItem about_editor = new MenuItem("About Editor");
         help.getItems().add(view_help);
         help.getItems().add(new SeparatorMenuItem());
-        help.getItems().add(about_notepad);
+        help.getItems().add(about_editor);
     }
 
     /**
